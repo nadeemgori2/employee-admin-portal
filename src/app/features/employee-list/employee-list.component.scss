@@ -1,3 +1,6 @@
+@import "../../../variables";
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 .employee-list-root {
   width: 100%;
   padding: 0;
@@ -9,17 +12,17 @@
   flex-direction: column;
   min-height: 96vh;
   border-radius: 10px;
-  box-shadow: 0 2px 18px 0 rgba(50, 70, 90, 0.08);
-  background: #fff;
+  box-shadow: $shadow-card;
+  background: $text-light;
 }
 
 .employee-list-header {
-  background: #496186;
+  background: $primary;
   padding: 24px 34px 18px 34px;
   border-radius: 10px 10px 0 0;
   min-height: 78px;
   .header-title {
-    color: #fff;
+    color: $text-light;
     font-size: 1.65rem;
     font-weight: 600;
     letter-spacing: 0.03em;
@@ -41,15 +44,15 @@
       }
     }
     .delete-btn {
-      background: #e94d4d;
-      color: #fff;
+      background: $danger;
+      color: $text-light;
       &:hover {
-        background: #d23434;
+        background: $danger-dark;
       }
     }
     .add-btn {
       background: #58b346;
-      color: #fff;
+      color: $text-light;
       &:hover {
         background: #469a39;
       }
@@ -69,19 +72,19 @@
   min-height: 0;
   overflow-y: auto;
   overflow-x: auto;
-  background: #fff;
+  background: $text-light;
 }
 
 .spinner {
   text-align: center;
-  color: #496186;
+  color: $primary;
   font-weight: 600;
   padding: 18px 0;
 }
 
 .table-footer {
   flex-shrink: 0;
-  background: #fff;
+  background: $text-light;
   border-radius: 0 0 10px 10px;
   padding: 0 28px 16px 28px;
   min-height: 54px;

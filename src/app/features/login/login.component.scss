@@ -1,15 +1,17 @@
+@import "../../../variables";
+@import "../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 .login-page {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #fafbfc;
 }
 
 .login-card {
   width: 100%;
   max-width: 70vh;
-  background: #fff;
+  background: $text-light;
   border-radius: 28px;
   box-shadow: 0 8px 32px 0 rgba(60, 72, 88, 0.12);
   overflow: hidden;
@@ -20,14 +22,14 @@
 
 .login-card-header {
   width: 100%;
-  background: #58b947;
+  background: $accent;
   padding: 40px 0 26px 0;
   display: flex;
   justify-content: center;
   align-items: center;
 
   h2 {
-    color: #fff;
+    color: $text-light;
     font-weight: 700;
     font-size: 2.3rem;
     margin: 0;
@@ -66,12 +68,12 @@
     opacity: 0.74;
   }
   &:focus {
-    background: #e5f7e3;
+    background: $accent-light;
     box-shadow: 0 2px 10px #d8f8d5a8;
   }
   &.is-invalid {
     background: #fff0f0;
-    border: 1.5px solid #e94d4d;
+    border: 1.5px solid $danger;
   }
 }
 
@@ -82,13 +84,13 @@
   margin-bottom: 10px;
 
   a {
-    color: #58b947;
+    color: $accent;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.2s;
     &:hover,
     &:focus {
-      color: #388e3c;
+      color: $accent-dark;
       text-decoration: underline;
     }
   }
@@ -96,8 +98,8 @@
 
 .pill-btn {
   width: 100%;
-  background: #58b947;
-  color: #fff;
+  background: $accent;
+  color: $text-light;
   font-size: 1.17rem;
   font-weight: 700;
   padding: 16px 0;
@@ -111,7 +113,7 @@
 
   &:hover,
   &:focus {
-    background: #388e3c;
+    background: $accent-dark;
     box-shadow: 0 4px 20px #e5f7e3e8;
   }
 
@@ -134,7 +136,7 @@
 @media (max-width: 599px) {
   .login-card {
     max-width: 95vw;
-    height: 95vh;
+    height: 97vh;
     border-radius: 18px;
   }
   .login-form {

@@ -1,3 +1,6 @@
+@import "../../../../variables";
+@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 :host {
   width: 100%;
 }
@@ -17,7 +20,7 @@
   color: #4a5578;
   font-size: 1.02rem;
   b {
-    color: #253e63;
+    color: $gray-900;
     font-weight: 700;
   }
 }
@@ -34,7 +37,7 @@
   margin: 0 2px;
   border: none;
   background: transparent;
-  color: #253e63;
+  color: $gray-900;
   font-weight: 600;
   border-radius: 7px;
   cursor: pointer;
@@ -43,8 +46,8 @@
   box-shadow: none;
 
   &.active {
-    background: #496186;
-    color: #fff;
+    background: $primary;
+    color: $text-light;
     font-weight: 800;
     box-shadow: 0 3px 10px 0 rgba(60, 90, 140, 0.07);
   }

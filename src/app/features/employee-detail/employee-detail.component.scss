@@ -1,10 +1,12 @@
+@import "../../../variables";
+
 :host {
   display: block;
   width: 100%;
   min-height: 100vh;
   height: 100%;
   overflow: auto;
-  background: #f3f5f9;
+  background: $gray-200;
 }
 
 .employee-detail-root {
@@ -14,7 +16,7 @@
 }
 
 .top-header {
-  background: #fff;
+  background: $text-light;
   border-radius: 12px;
   box-shadow: 0 2px 12px 0 rgba(100, 120, 150, 0.07);
   margin-bottom: 24px;
@@ -27,11 +29,11 @@
       border-bottom: none;
       button {
         font-weight: 500;
-        color: #253e63;
+        color: $gray-900;
         background: none;
         &.active {
-          background: #f3f7fd;
-          color: #3b77e4;
+          background: $primary-bg;
+          color: $primary-light;
           font-weight: 700;
           border-radius: 8px;
         }
@@ -44,7 +46,7 @@
       border-radius: 8px;
       input {
         font-size: 1rem;
-        color: #384866;
+        color: $gray-800;
         padding: 8px 12px;
         border: none;
         background: transparent;
@@ -66,7 +68,7 @@
         right: 8px;
         width: 7px;
         height: 7px;
-        background: #e94d4d;
+        background: $danger;
         border-radius: 50%;
         display: inline-block;
       }
@@ -87,7 +89,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 24px 10px;
-  background: #fff;
+  background: $text-light;
   border-radius: 16px;
   box-shadow: 0 2px 16px 0 rgba(100, 120, 150, 0.1);
   flex-wrap: nowrap;
@@ -107,7 +109,7 @@
       color: #273b52;
     }
     .meta {
-      color: #7c8aac;
+      color: $gray-700;
       font-size: 1.02rem;
       display: flex;
       align-items: center;
@@ -122,7 +124,7 @@
   }
   .datetime {
     font-size: 1rem;
-    color: #b0b9c7;
+    color: $gray-600;
     white-space: nowrap;
     margin-left: 24px;
   }
@@ -131,7 +133,7 @@
 .metrics-row {
   padding: 1rem 0.5rem;
   .kpi-card {
-    background: #fff;
+    background: $text-light;
     border-radius: 13px;
     box-shadow: 0 1px 8px 0 rgba(150, 180, 220, 0.08);
     padding: 20px 15px;
@@ -142,7 +144,7 @@
     }
     .kpi-value {
       font-size: 1.7rem;
-      color: #3b77e4;
+      color: $primary-light;
       font-weight: 700;
       margin: 8px 0 3px 0;
     }
@@ -156,7 +158,7 @@
 .main-content-grid {
   padding: 1rem 0.5rem;
   .main-card {
-    background: #fff;
+    background: $text-light;
     border-radius: 14px;
     box-shadow: 0 1px 8px 0 rgba(150, 180, 220, 0.07);
     padding: 18px 18px 8px 18px;
@@ -164,7 +166,7 @@
   }
   .side-cards {
     .mini-card {
-      background: #fff;
+      background: $text-light;
       border-radius: 12px;
       box-shadow: 0 1px 8px 0 rgba(150, 180, 220, 0.07);
       padding: 20px 20px 15px 20px;
@@ -180,11 +182,11 @@
       .attendance-value {
         font-size: 2.2rem;
         font-weight: 700;
-        color: #26b34a;
+        color: $success;
         margin: 0 0 7px 0;
       }
       .caption {
-        color: #7c8aac;
+        color: $gray-700;
         font-size: 1rem;
       }
     }
@@ -206,7 +208,7 @@
     padding: 10px 11px;
     vertical-align: middle;
     font-size: 1rem;
-    color: #384866;
+    color: $gray-800;
     .mini-avatar {
       width: 30px;
       height: 30px;
@@ -267,10 +269,10 @@
         border-radius: 5px;
         display: inline-block;
         &.salary {
-          background: #36a1ef;
+          background: $blue;
         }
         &.bonus {
-          background: #2dc891;
+          background: $green;
         }
       }
     }
@@ -280,7 +282,7 @@
 .back-btn {
   display: flex;
   align-items: center;
-  color: #496186;
+  color: $primary;
   font-weight: 600;
   background: none;
   border: none;
@@ -291,7 +293,7 @@
     font-size: 1.25rem;
   }
   &:hover {
-    color: #3b77e4;
+    color: $primary-light;
     background: #eaf1fb;
     border-radius: 6px;
     transition: background 0.2s;
@@ -397,7 +399,7 @@
   border-radius: 8px;
   padding: 8px 12px;
   font-size: 1rem;
-  color: #384866;
+  color: $gray-800;
   outline: none;
   transition: border-color 0.2s;
   box-shadow: none;
@@ -407,6 +409,6 @@
   }
   &:focus {
     border-color: #42a5f5;
-    background: #fff;
+    background: $text-light;
   }
 }

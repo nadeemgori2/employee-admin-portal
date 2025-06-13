@@ -1,3 +1,6 @@
+@import "../../../../variables";
+@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 .employee-table {
   width: 100%;
   min-width: 780px;
@@ -18,7 +21,7 @@
   }
 
   th {
-    color: #253e63;
+    color: $gray-900;
     background: #f5f7fa;
     font-size: 1.13rem;
     font-weight: 700;
@@ -50,14 +53,14 @@
   }
 
   .edit-action {
-    color: #ffc71f;
+    color: $warning;
     &:hover {
-      color: #e6b800;
+      color: $warning-dark;
     }
   }
 
   .delete-action {
-    color: #e94d4d;
+    color: $danger;
     &:hover {
       color: #c0392b;
     }
