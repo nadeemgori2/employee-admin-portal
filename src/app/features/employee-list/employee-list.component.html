@@ -1,0 +1,59 @@
+<div class="employee-list-root">
+  <mat-card class="employee-list-card">
+    <!-- HEADER -->
+    <div
+      class="employee-list-header d-flex flex-wrap justify-content-between align-items-center"
+    >
+      <div class="header-title">Manage <strong>Employees</strong></div>
+      <div class="header-actions d-flex gap-2">
+        <button
+          *ngIf="userRole$ | async as role"
+          [hidden]="role !== 'SOP2'"
+          mat-flat-button
+          color="warn"
+          class="delete-btn header-btn"
+          (click)="onBulkDelete()"
+        >
+          <mat-icon>remove_circle</mat-icon>
+          Delete
+        </button>
+        <button
+          mat-flat-button
+          color="primary"
+          class="add-btn header-btn"
+          (click)="onAdd()"
+        >
+          <mat-icon>add_circle</mat-icon>
+          Add New Employee
+        </button>
+      </div>
+    </div>
+    <div class="employee-content-flex">
+      <div class="employee-table-container">
+        <app-employee-table
+          [displayedColumns]="displayedColumns"
+          [employees]="(paginatedEmployees$ | async)!"
+          [userRole]="userRole$ | async"
+          [selectedIds]="selectedIds"
+          [allSelected]="isAllSelected()"
+          [anySelected]="isAnySelected()"
+          (toggleSelection)="toggleSelection($event)"
+          (masterToggle)="masterToggle()"
+          (onEdit)="onEdit($event)"
+          (onDelete)="onDelete($event)"
+          (onView)="onView($event)"
+        ></app-employee-table>
+      </div>
+      <!-- Showing info & Pagination -->
+      <div class="table-footer">
+        <app-pagination
+          [totalItems]="totalEmployees"
+          [pageSize]="pageSize"
+          [currentPage]="currentPage"
+          (pageChange)="onPageChange($event)"
+        ></app-pagination>
+      </div>
+    </div>
+    <div *ngIf="loading$ | async" class="spinner">Loading employees...</div>
+  </mat-card>
+</div>

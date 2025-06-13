@@ -1,0 +1,45 @@
+<div class="pagination-container">
+  <div class="pagination-info">
+    Showing
+    <b>{{ showingFrom || 0 }}</b>
+    -
+    <b>{{ showingTo || 0 }}</b>
+    of
+    <b>{{ totalItems }}</b>
+    entries
+  </div>
+
+  <nav class="pagination-nav" aria-label="Table Pagination">
+    <button
+      class="pagination-btn"
+      [disabled]="currentPage === 1"
+      (click)="prevPage()"
+      aria-label="Previous page"
+    >
+      Previous
+    </button>
+    <ng-container *ngFor="let page of pages">
+      <ng-container *ngIf="page === -1">
+        <span class="pagination-ellipsis">…</span>
+      </ng-container>
+      <button
+        *ngIf="page !== -1"
+        class="pagination-btn"
+        [class.active]="currentPage === page"
+        (click)="selectPage(page)"
+        [attr.aria-current]="currentPage === page ? 'page' : null"
+        [attr.aria-label]="'Go to page ' + page"
+      >
+        {{ page }}
+      </button>
+    </ng-container>
+    <button
+      class="pagination-btn"
+      [disabled]="currentPage === totalPages"
+      (click)="nextPage()"
+      aria-label="Next page"
+    >
+      Next
+    </button>
+  </nav>
+</div>

@@ -1,0 +1,59 @@
+<div
+  class="login-page d-flex align-items-center justify-content-center min-vh-100"
+>
+  <div class="login-card shadow">
+    <div class="login-card-header text-center">
+      <h2>Sign In</h2>
+    </div>
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+      autocomplete="off"
+      class="login-form"
+      novalidate
+    >
+      <div class="form-group mb-3">
+        <input
+          class="pill-input form-control"
+          placeholder="Username"
+          formControlName="username"
+          autocomplete="username"
+          aria-label="Username"
+          [class.is-invalid]="
+            loginForm.get('username')?.invalid &&
+            loginForm.get('username')?.touched
+          "
+        />
+      </div>
+      <div class="form-group mb-2">
+        <input
+          class="pill-input form-control"
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+          autocomplete="current-password"
+          aria-label="Password"
+          [class.is-invalid]="
+            loginForm.get('password')?.invalid &&
+            loginForm.get('password')?.touched
+          "
+        />
+      </div>
+      <div class="forgot-link mb-2">
+        <span>Forgot </span>
+        <a href="#" tabindex="-1">Username</a> /
+        <a href="#" tabindex="-1">Password?</a>
+      </div>
+      <div *ngIf="error$ | async as error" class="login-error-msg">
+        {{ error }}
+      </div>
+      <button
+        class="pill-btn btn btn-success"
+        type="submit"
+        [disabled]="loginForm.invalid || loading"
+      >
+        SIGN IN
+      </button>
+    </form>
+  </div>
+</div>

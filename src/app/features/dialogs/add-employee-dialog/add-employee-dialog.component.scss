@@ -1,0 +1,68 @@
+:host {
+  display: block;
+  min-width: 50vh;
+  width: 100%;
+  padding: 1.5rem 1rem;
+  background: #fff;
+  border-radius: 8px;
+  font-family: "Inter", "Roboto", Arial, sans-serif;
+  box-shadow: 0 2px 16px rgba(80, 90, 110, 0.08);
+}
+
+@media (max-width: 576px) {
+  :host {
+    min-width: 300px;
+    max-width: 100vw;
+    padding: 1rem 0.5rem;
+    border-radius: 0;
+  }
+}
+
+.close-btn {
+  color: #a0a8b0;
+}
+
+.dialog-divider {
+  border: none;
+  border-top: 1.5px solid #dde4eb;
+}
+
+.employee-form {
+  width: 100%;
+}
+
+.form-label {
+  font-weight: 500;
+  color: #63718a;
+}
+
+.form-control {
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1.2px solid #dde4eb;
+  transition: border 0.18s;
+  &:focus {
+    border-color: #58b346;
+    box-shadow: none;
+  }
+  &.is-invalid {
+    border-color: #e94d4d;
+  }
+}
+
+.invalid-feedback {
+  color: #e94d4d;
+  font-size: 0.96rem;
+}
+
+.form-actions {
+  background: #e9eef0;
+  border-radius: 0 0 4px 4px;
+  padding: 1rem;
+}
+
+.btn-success:disabled {
+  background: #c6dbc6 !important;
+  color: #fff !important;
+  cursor: not-allowed;
+}

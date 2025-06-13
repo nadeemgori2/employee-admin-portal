@@ -1,0 +1,178 @@
+<div class="employee-detail-root container-fluid">
+  <!-- Top Navigation/Header -->
+  <div class="top-header row align-items-center gx-0">
+    <div
+      class="header-left col-12 col-md-auto d-flex align-items-center mb-2 mb-md-0"
+    >
+      <button
+        class="back-btn me-2"
+        mat-button
+        (click)="goBack()"
+        aria-label="Back to list"
+      >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+      <nav class="nav-tabs d-flex">
+        <button mat-button [class.active]="activeTab === 'dashboard'">
+          Dashboard
+        </button>
+        <button mat-button [class.active]="activeTab === 'leave'">Leave</button>
+        <button mat-button [class.active]="activeTab === 'attendance'">
+          Attendance
+        </button>
+        <button mat-button [class.active]="activeTab === 'performance'">
+          Performance
+        </button>
+      </nav>
+    </div>
+    <div
+      class="header-center col-12 col-md d-flex justify-content-center my-2 my-md-0"
+    >
+      <input
+        class="custom-search-input"
+        type="text"
+        placeholder="Search anything..."
+        style="max-width: 260px; width: 100%"
+      />
+    </div>
+    <div
+      class="header-right col-12 col-md-auto d-flex align-items-center justify-content-end gap-2"
+    >
+      <button mat-icon-button aria-label="Mail">
+        <mat-icon>mail</mat-icon>
+        <span class="dot"></span>
+      </button>
+      <button mat-icon-button aria-label="Notifications">
+        <mat-icon>notifications</mat-icon>
+        <span class="dot"></span>
+      </button>
+      <button mat-icon-button class="avatar-btn" aria-label="User">
+        <img
+          class="avatar-img"
+          [src]="employee?.photo || defaultAvatar"
+          alt="User"
+        />
+      </button>
+    </div>
+  </div>
+
+  <!-- Employee header/info -->
+  <div class="employee-header-card row align-items-center mx-0">
+    <div class="col-auto px-0">
+      <img
+        class="avatar"
+        [src]="employee?.photo || defaultAvatar"
+        alt="Avatar"
+      />
+    </div>
+    <div class="employee-main-info col">
+      <h2>{{ employee?.name }}</h2>
+      <div class="meta">
+        <span>{{ employee?.position }}</span>
+        <span>&middot;</span>
+        <span>{{ employee?.department }}</span>
+        <span>&middot;</span>
+        <span>
+          <mat-icon class="meta-icon">mail</mat-icon>
+          {{ employee?.email }}
+        </span>
+      </div>
+    </div>
+    <div class="datetime col-auto text-end">
+      {{ today | date : "d MMM yyyy, h:mm a" }}
+    </div>
+  </div>
+
+  <!-- KPI Row -->
+  <div class="metrics-row row gx-3 gap-3">
+    <div class="kpi-card col-6 col-md-3 mb-3 mb-md-0" *ngFor="let kpi of kpis">
+      <div class="kpi-label">{{ kpi.label }}</div>
+      <div class="kpi-value">{{ kpi.value }}</div>
+      <div class="kpi-caption">{{ kpi.caption }}</div>
+    </div>
+  </div>
+
+  <!-- Main Content: Team + Charts -->
+  <div class="main-content-grid row gx-3">
+    <!-- Left: Team table (no tabs, just the table) -->
+    <div class="main-card col-12 col-lg-7 mb-3 mb-lg-0">
+      <div class="table-responsive">
+        <table class="team-table table align-middle">
+          <thead>
+            <tr>
+              <th>Team Members</th>
+              <th>Score</th>
+              <th>This month</th>
+              <th>Last month</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let member of teamMembers">
+              <td class="member">
+                <img
+                  class="mini-avatar"
+                  [src]="member.photo || defaultAvatar"
+                />
+                <div class="member-info d-inline-block ms-2">
+                  <div class="name">{{ member.name }}</div>
+                  <div class="role">{{ member.role }}</div>
+                </div>
+              </td>
+              <td>{{ member.score }}</td>
+              <td>
+                <span class="dot" [style.background]="member.color"></span>
+                {{ member.thisMonth }}
+              </td>
+              <td>
+                <span class="dot gray"></span>
+                {{ member.lastMonth }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Right: Charts/metrics -->
+    <div class="side-cards col-12 col-lg-5 d-flex flex-column gap-3">
+      <!-- Performance Chart (Bar) -->
+      <div class="mini-card">
+        <div class="mini-card-title">Performance comparison</div>
+        <canvas baseChart [data]="performanceChartData" [type]="'bar'"></canvas>
+      </div>
+      <div class="mini-card">
+        <div class="mini-card-title">Expenses</div>
+        <div class="expenses-list">
+          <div class="expense-row" *ngFor="let expense of expenses">
+            <img class="mini-avatar" [src]="expense.photo || defaultAvatar" />
+            <div class="expense-info">
+              <div class="name">{{ expense.name }}</div>
+              <div class="role">{{ expense.role }}</div>
+            </div>
+            <div class="expense-bars">
+              <span
+                class="bar salary"
+                [style.width]="expense.salary + '%'"
+              ></span>
+              <span
+                class="bar bonus"
+                [style.width]="expense.bonus + '%'"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Leave Pie Chart -->
+      <div class="mini-card">
+        <div class="mini-card-title">Annual Leave</div>
+        <canvas baseChart [data]="leaveChartData" [type]="'pie'"></canvas>
+      </div>
+      <!-- Attendance -->
+      <div class="mini-card attendance-card">
+        <div class="mini-card-title">Attendance %</div>
+        <div class="attendance-value">{{ attendance }}%</div>
+        <div class="caption">Attendance Rate</div>
+      </div>
+    </div>
+  </div>
+</div>
