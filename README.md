@@ -1,4 +1,4 @@
-# Employee Admin Portal
+# 📺 Employee Admin Portal
 
 ## Overview
 
@@ -7,7 +7,7 @@ It provides secure user authentication, a feature-rich employee management table
 
 ---
 
-## Features
+## 🚀 Features
 
 - **Login** with role-based access (SOP1/SOP2)
 - **Employee List** with:
@@ -17,6 +17,7 @@ It provides secure user authentication, a feature-rich employee management table
   - Edit and Delete actions with confirmation dialogs
 - **Employee Details** view:
   - Dashboard-style charts for performance, attendance, and leave
+  - More section, charts, and widget can be added
   - Team & expense breakdown (sample/mock data)
 - **Add/Edit Employee** via modal/drawer, fully validated
 - **Mocked REST API** (json-server) for all CRUD/data
@@ -31,23 +32,23 @@ It provides secure user authentication, a feature-rich employee management table
 
 ---
 
-## Tech Stack
+## 🚀 Tech Stack
 
-- [Angular 17](https://angular.io/) (Standalone Components, Signals-ready)
-- [Angular Material](https://material.angular.io/) + [Bootstrap 5](https://getbootstrap.com/)
-- [NgRx](https://ngrx.io/) (store, effects)
-- [RxJS](https://rxjs.dev/)
-- [json-server](https://github.com/typicode/json-server) (mock API)
-- [Chart.js](https://www.chartjs.org/) ([ng2-charts](https://valor-software.com/ng2-charts/)) for dashboard
-- [SCSS](https://sass-lang.com/) for custom theming
+- 📦 [Angular 17](https://angular.io/) (Standalone Components, Signals-ready)
+- 💡 [Angular Material](https://material.angular.io/) + [Bootstrap 5](https://getbootstrap.com/)
+- 🔒[NgRx](https://ngrx.io/) (store, effects)
+- ⚡[RxJS](https://rxjs.dev/)
+- 📡 [json-server](https://github.com/typicode/json-server) (mock API)
+- 💄 [Chart.js](https://www.chartjs.org/) ([ng2-charts](https://valor-software.com/ng2-charts/)) for dashboard
+- 🎨 [SCSS](https://sass-lang.com/) for custom theming
 
 ---
 
-## Getting Started
+## 🏁 Getting Started
 
 ### 1. Clone the repo
 ```bash
-git clone <YOUR_REPO_URL>
+git clone https://github.com/nadeemgori2/employee-admin-portal.git
 cd employee-admin-portal
 ```
 
@@ -71,22 +72,29 @@ npm run dev
 ### 5. Open in browser
 Visit: [http://localhost:4200](http://localhost:4200)
 
+### 6. Run unit test cases
+```bash
+npm run test
+# or
+ng test
+```
+
 ---
 
 ## Usage
 
 - **Login as SOP1:**  
   username: `sop1`  
-  password: `password1`
+  password: `admin`
 - **Login as SOP2:**  
   username: `sop2`  
-  password: `password2`
+  password: `admin`
 
 - SOP2 can delete employees; SOP1 cannot.
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
@@ -110,53 +118,63 @@ src/
 
 ## Development Notes
 
-- **Refactoring:**  
+- ♻️ **Refactoring:**  
   Business logic, selection, and pagination are extracted into services for maintainability and testability.
-- **Responsiveness:**  
+- 📱 **Responsiveness:**  
   The UI leverages Bootstrap utilities and custom SCSS to ensure mobile support.
-- **Code Quality:**  
+- 🎯  **Code Quality:**  
   Code was cleaned of unused/legacy files and unnecessary comments. Only useful documentation remains for reviewers.
-- **GitHub Copilot:**  
-  Used for some refactoring, with all changes reviewed and tested.
-- **Unit Testing:**  
-  Provided for state logic and utility services.
-- **Theming:**  
-  Uses Material prebuilt theme with custom overrides; easy to switch/extend.
+- 🧪 **Unit Testing:**  
+  Provided for all componentns, services and utility.
 
 ---
 
 ## Future Scope & Improvements
 
-- **UI/UX Enhancements:**  
+There's always room for improvement — including enhanced accessibility, refined layout structure, and more visually appealing styling using modern CSS practices and design systems.
+
+- 🧱 **UI/UX Enhancements:**  
   More polishing can be done to align pixel-perfectly with advanced design systems. Button, input, and card styles can be further unified for a cohesive look and feel.
-- **Centralized Theming:**  
+- 🌙 **Centralized Theming:**  
   Move all style variables (colors, typography, spacing) into a global SCSS file or Angular Material theme for easier maintenance and better reusability.
-- **Reusable Style Utilities:**  
+- 🎨 **Reusable Style Utilities:**  
   Refactor common styles (card, table, dialog, spacing) into mixins and utility classes to reduce duplication and speed up future features.
-- **Angular Signals Adoption:**  
+- 🧱 **Angular Signals Adoption:**  
   Leverage Angular Signals for even more reactive, high-performance UI—future-ready as the ecosystem evolves.
-- **Accessibility (a11y):**  
+- ♿ **Accessibility (a11y):**  
   WAI-ARIA roles, keyboard navigation, and screen reader optimizations are partially in place; future improvements can add live region support, better tab order, and more.
-- **Advanced Responsiveness:**  
+- 📱 **Advanced Responsiveness:**  
   Further enhancements for tablet, landscape, and split-screen views can be added.
-- **i18n/Localization:**  
+- 📚 **i18n/Localization:**  
   Easy to extend for multiple languages and locales.
-- **API Integration:**  
+- 🧰 **API Integration:**  
   Ready for real backend—just replace mock services.
-- **Testing:**  
+- 🧪 **Testing:**  
   Add end-to-end (Cypress) and additional unit tests for components.
-- **Other:**  
+- ♻️ **Other:**  
   - User profile and role management
   - Notification system
   - Activity logging/auditing
+  - Strong password validation
 
 ---
 
 ## Assignment Notes
 
 - The solution closely follows the assignment mockups, acceptance criteria, and technical requirements.
-- If any reviewer needs further clarification or walkthrough, please contact me at [your-email@example.com].
+- If any reviewer needs further clarification or walkthrough, please contact me at [nadeemgori410@gmail.com].
 
 ---
+
+## 👨‍💻 Author
+
+**Nadeem Gori**  
+Senior Frontend/Full Stack Developer  
+Dubai, UAE  
+[LinkedIn](https://www.linkedin.com/in/nadeem-gori-639724a1)
+
+---
+
+## 📃 License
 
 **Thank you for reviewing!**
